@@ -7,10 +7,16 @@ import Services from "./pages/Services"
 import Projects from "./pages/Projects"
 import ProjectDetail from "./pages/ProjectDetail"
 import Contact from "./pages/Contact"
+import { ReactLenis, useLenis } from 'lenis/react'
 
 export default function App() {
+  const lenis = useLenis((lenis) => {
+    // called every scroll
+    console.log(lenis)
+  })
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <ReactLenis root>
+<div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,5 +28,7 @@ export default function App() {
       </Routes>
       <Footer />
     </div>
+    </ReactLenis>
+    
   )
 }

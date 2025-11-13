@@ -3,20 +3,17 @@
 import { useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { Menu, X } from "lucide-react"
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import gsap from "gsap";
+
+// gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  
 
   const links = [
     { name: "Home", path: "/" },
@@ -30,15 +27,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "navbar-scrolled" : "bg-transparent"
+      className={`fixed w-full top-0 z-50 transition-all duration-300 backdrop-blur-md ${
+        isScrolled ? "navbar-scrolled bg-background/80" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
-            <div className="text-xl font-bold text-foreground">WR</div>
+          <Link to="/" className="shrink-0">
+            <div className="text-5xl font-bold text-foreground">WR</div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -47,7 +44,7 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-l font-medium transition-colors ${
                   isActive(link.path) ? "text-accent border-b-2 border-accent" : "text-foreground hover:text-accent"
                 }`}
               >
