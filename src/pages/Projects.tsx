@@ -15,7 +15,7 @@ export default function Projects() {
       category: "Urban Planning",
       className: "md:col-span-1",
       background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20">
+        <div className="absolute inset-0 bg-linear-to-br from-blue-500/20 to-purple-500/20">
           <img 
             src="/modern-downtown-urban-development-city.jpg" 
             alt="Downtown Revitalization" 
@@ -75,7 +75,7 @@ export default function Projects() {
       category: "Urban Planning",
       className: "md:col-span-1",
       background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-lime-500/20">
+        <div className="absolute inset-0 bg-linear-to-br from-emerald-500/20 to-lime-500/20">
           <img 
             src="/landscape-park-design-outdoor-recreation.jpg" 
             alt="Regional Park" 
@@ -95,7 +95,7 @@ export default function Projects() {
       category: "Architecture",
       className: "md:col-span-1",
       background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-cyan-500/20">
+        <div className="absolute inset-0 bg-linear-to-br from-indigo-500/20 to-cyan-500/20">
           <img 
             src="/modern-office-campus-tech-buildings.jpg" 
             alt="Tech Campus" 
@@ -115,7 +115,7 @@ export default function Projects() {
       category: "Urban Planning",
       className: "md:col-span-2",
       background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-red-500/20">
+        <div className="absolute inset-0 bg-linear-to-br from-amber-500/20 to-red-500/20">
           <img 
             src="/historic-architecture-renovation-restoration.jpg" 
             alt="Heritage District" 
