@@ -8,6 +8,10 @@ import Projects from "./pages/Projects"
 import ProjectDetail from "./pages/ProjectDetail"
 import Contact from "./pages/Contact"
 import { ReactLenis, useLenis } from 'lenis/react'
+import Button from "./components/Button"
+import Card from "./components/FlipCard"
+import ScrollToTop from "./components/ScrollToTop"
+import { BentoGrid } from "./components/BentoGrid"
 
 export default function App() {
   const lenis = useLenis((lenis) => {
@@ -18,6 +22,7 @@ export default function App() {
     <ReactLenis root>
 <div className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -27,6 +32,9 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
+      {/* <Card/> */}
+      {/* <AsymmetricGrid/> */}
+      <BentoGrid/>
     </div>
     </ReactLenis>
     

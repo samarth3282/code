@@ -71,7 +71,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="shrink-0 mt-1">
                     <Phone className="text-accent" size={24} />
                   </div>
                   <div>
@@ -83,7 +83,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="shrink-0 mt-1">
                     <MapPin className="text-accent" size={24} />
                   </div>
                   <div>
@@ -101,7 +101,7 @@ export default function Contact() {
 
               {/* Map Placeholder */}
               <div className="mt-8 rounded-lg overflow-hidden h-80">
-                <iframe
+                {/* <iframe
                   width="100%"
                   height="100%"
                   frameBorder="0"
@@ -110,7 +110,15 @@ export default function Contact() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Wise Root Design Studio Location"
-                ></iframe>
+                ></iframe> */}
+                <iframe
+                width="100%"
+                height="100%"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.744180129635!2d72.81658683796476!3d21.241990627034074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04eb2f9534f55%3A0xce7bc265123d0155!2sNani%20Ved%2C%20Pramukh%20Darshan%20Society%2C%20Dabholi%2C%20Surat%2C%20Gujarat%20395004!5e0!3m2!1sen!2sin!4v1763147059465!5m2!1sen!2sin"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Wise Root Design Studio Location"></iframe>
               </div>
             </div>
 

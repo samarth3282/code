@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Button from "./Button"
 
 interface HeroProps {
   title: string
@@ -41,13 +42,11 @@ export default function Hero({ title, subtitle, description, image, buttons }: H
               <Link
                 key={index}
                 to={button.link}
-                className={`px-8 py-3 rounded transition-all ${
-                  button.primary
-                    ? "bg-accent text-white hover:bg-accent/90"
-                    : "bg-white text-foreground hover:bg-gray-100"
-                }`}
               >
-                {button.label}
+                <Button content={button.label} {...(!button.primary && { notHoverBackgroundColor: "white",textColor: "black",hoverTextColor: "white"})}
+/>
+
+                
               </Link>
             ))}
           </div>

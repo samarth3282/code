@@ -22,19 +22,19 @@ export default function About() {
 
   const team = [
     {
-      name: "Alexander Chen",
+      name: "Harsh Patel",
       role: "Founder & Principal Architect",
-      image: "/professional-portrait-man-architect.jpg",
+      image: "/hp.jpg",
     },
     {
-      name: "Emma Rodriguez",
+      name: "Harsh Patel",
       role: "Urban Planning Director",
-      image: "/professional-portrait-woman-urban-planner.jpg",
+      image: "/hp.jpg",
     },
     {
-      name: "James Mitchell",
+      name: "Harsh Patel",
       role: "Senior Design Consultant",
-      image: "/professional-portrait-man-designer.jpg",
+      image: "/hp.jpg",
     },
   ]
 

@@ -4,6 +4,7 @@ import ServiceCard from "../components/ServiceCard"
 import ProjectCard from "../components/ProjectCard"
 import { Building2, Map, FileCheck, Lightbulb } from "lucide-react"
 import { Link } from "react-router-dom"
+import Button from "../components/Button"
 
 export default function Home() {
   const services = [
@@ -101,9 +102,8 @@ export default function Home() {
               />
               <Link
                 to="/about"
-                className="inline-block mt-8 px-6 py-3 bg-accent text-white rounded hover:bg-accent/90 transition-colors"
               >
-                Learn Our Story
+                <Button content={"Learn Our Story"}/>
               </Link>
             </div>
             <div className="h-96 rounded-lg overflow-hidden">
@@ -119,6 +119,7 @@ export default function Home() {
           <SectionHeader
             title="Our Services"
             description="Comprehensive architectural and urban planning solutions tailored to your vision"
+            centered={true}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {services.map((service, index) => (
@@ -128,9 +129,8 @@ export default function Home() {
           <div className="text-center">
             <Link
               to="/services"
-              className="inline-block px-8 py-3 bg-accent text-white rounded hover:bg-accent/90 transition-colors"
             >
-              View All Services
+              <Button content={"View All Services"}/>
             </Link>
           </div>
         </div>
@@ -148,9 +148,8 @@ export default function Home() {
           <div className="text-center">
             <Link
               to="/projects"
-              className="inline-block px-8 py-3 bg-accent text-white rounded hover:bg-accent/90 transition-colors"
             >
-              Explore All Projects
+              <Button content={"Explore All Projects"}/>
             </Link>
           </div>
         </div>
@@ -182,9 +181,8 @@ export default function Home() {
           </p>
           <Link
             to="/contact"
-            className="inline-block px-8 py-3 bg-accent text-white rounded hover:bg-accent/90 transition-colors"
           >
-            Get in Touch
+            <Button content={"Get in Touch"}/>
           </Link>
         </div>
       </section>

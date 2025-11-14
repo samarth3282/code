@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import ProjectCard from "../components/ProjectCard"
+import { BentoCard, BentoGrid } from "../components/BentoGrid"
+import { ArchiveIcon, RocketIcon, HomeIcon, GlobeIcon, LightningBoltIcon, BookmarkIcon } from "@radix-ui/react-icons"
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all")
@@ -9,51 +10,123 @@ export default function Projects() {
   const projects = [
     {
       id: "1",
-      title: "Downtown Revitalization Master Plan",
+      name: "Downtown Revitalization Master Plan",
       location: "Metropolitan Area",
       category: "Urban Planning",
-      image: "/modern-downtown-urban-development-city.jpg",
+      className: "md:col-span-1",
+      background: (
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20">
+          <img 
+            src="/modern-downtown-urban-development-city.jpg" 
+            alt="Downtown Revitalization" 
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+      ),
+      Icon: GlobeIcon,
       description: "Comprehensive urban revitalization strategy for downtown core",
+      href: "/projects/1",
+      cta: "Learn more",
     },
     {
       id: "2",
-      title: "Sustainable Housing Complex",
+      name: "Sustainable Housing Complex",
       location: "Eco District",
       category: "Architecture",
-      image: "/sustainable-green-buildings-eco-friendly.jpg",
+      className: "md:col-span-2",
+      background: (
+        <div className="absolute inset-0 bg-linear-to-br from-green-500/20 to-teal-500/20">
+          <img 
+            src="/sustainable-green-buildings-eco-friendly.jpg" 
+            alt="Sustainable Housing" 
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+      ),
+      Icon: HomeIcon,
       description: "Mixed-use residential development with green building certifications",
+      href: "/projects/2",
+      cta: "Learn more",
     },
     {
       id: "3",
-      title: "Cultural Center & Public Plaza",
+      name: "Cultural Center & Public Plaza",
       location: "Arts Quarter",
       category: "Architecture",
-      image: "/modern-cultural-center-building-glass-architecture.jpg",
+      className: "md:col-span-2",
+      background: (
+        <div className="absolute inset-0 bg-linear-to-br from-pink-500/20 to-orange-500/20">
+          <img 
+            src="/modern-cultural-center-building-glass-architecture.jpg" 
+            alt="Cultural Center" 
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+      ),
+      Icon: ArchiveIcon,
       description: "Contemporary cultural hub with flexible public gathering space",
+      href: "/projects/3",
+      cta: "Learn more",
     },
     {
       id: "4",
-      title: "Regional Park Development",
+      name: "Regional Park Development",
       location: "Suburban Area",
       category: "Urban Planning",
-      image: "/landscape-park-design-outdoor-recreation.jpg",
+      className: "md:col-span-1",
+      background: (
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-lime-500/20">
+          <img 
+            src="/landscape-park-design-outdoor-recreation.jpg" 
+            alt="Regional Park" 
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+      ),
+      Icon: BookmarkIcon,
       description: "Multi-phase park development with trails and community facilities",
+      href: "/projects/4",
+      cta: "Learn more",
     },
     {
       id: "5",
-      title: "Tech Campus Expansion",
+      name: "Tech Campus Expansion",
       location: "Innovation Hub",
       category: "Architecture",
-      image: "/modern-office-campus-tech-buildings.jpg",
+      className: "md:col-span-1",
+      background: (
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-cyan-500/20">
+          <img 
+            src="/modern-office-campus-tech-buildings.jpg" 
+            alt="Tech Campus" 
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+      ),
+      Icon: RocketIcon,
       description: "Cutting-edge office spaces designed for collaborative innovation",
+      href: "/projects/5",
+      cta: "Learn more",
     },
     {
       id: "6",
-      title: "Heritage District Preservation",
+      name: "Heritage District Preservation",
       location: "Historic Quarter",
       category: "Urban Planning",
-      image: "/historic-architecture-renovation-restoration.jpg",
+      className: "md:col-span-2",
+      background: (
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-red-500/20">
+          <img 
+            src="/historic-architecture-renovation-restoration.jpg" 
+            alt="Heritage District" 
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+      ),
+      Icon: LightningBoltIcon,
       description: "Adaptive reuse strategy preserving heritage while enabling growth",
+      href: "/projects/6",
+      cta: "Learn more",
     },
   ]
 
@@ -97,11 +170,11 @@ export default function Projects() {
       {/* Projects Grid */}
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <BentoGrid>
             {filtered.map((project) => (
-              <ProjectCard key={project.id} {...project} />
+              <BentoCard key={project.id} {...project} />
             ))}
-          </div>
+          </BentoGrid>
         </div>
       </section>
     </main>

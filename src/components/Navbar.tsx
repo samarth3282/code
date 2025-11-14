@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="shrink-0">
-            <div className="text-5xl font-bold text-foreground">WR</div>
+            <div className="text-5xl font-bold text-foreground">WR.</div>
           </Link>
 
           {/* Desktop Navigation */}

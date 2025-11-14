@@ -1,3 +1,4 @@
+import Button from "../components/Button"
 import SectionHeader from "../components/SectionHeader"
 import ServiceCard from "../components/ServiceCard"
 import { Building2, Map, FileCheck, Lightbulb, ArrowRight } from "lucide-react"
@@ -150,10 +151,13 @@ export default function Services() {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-white text-accent rounded hover:bg-gray-100 transition-colors font-semibold"
+            
           >
-            Request Consultation
+            <div className="inline-flex items-center gap-2">
+<Button content={"Request Consultation"}  notHoverBackgroundColor="white" textColor="#8b7355" className="font-bold" />
             <ArrowRight size={18} />
+            </div>
+            
           </Link>
         </div>
       </section>
