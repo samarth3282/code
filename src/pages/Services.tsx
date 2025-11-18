@@ -1,6 +1,6 @@
 import Button from "../components/Button"
 import SectionHeader from "../components/SectionHeader"
-import ScrollStack, { ScrollStackItem } from "../components/ScrollStack"
+import ServiceCard from "../components/ServiceCard"
 import { Building2, Map, FileCheck, Lightbulb, ArrowRight } from "lucide-react"
 import { Link } from "react-router-dom"
 
@@ -88,54 +88,19 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Stack */}
-      <section className="bg-background py-[-100px]">
+      {/* Services Grid */}
+      <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollStack
-            useWindowScroll={true}
-            itemDistance={1}
-            itemScale={0.02}
-            itemStackDistance={1}
-            stackPosition="40%"
-            scaleEndPosition="30%"
-            baseScale={0.8}
-            rotationAmount={0}
-            blurAmount={0}
-            className="overflow-visible!"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {services.map((service, index) => (
-              <ScrollStackItem key={index} itemClassName="bg-primary flex items-center justify-center p-1">
-                <div className="flex rounded-3xl overflow-hidden shadow-2xl min-h-[100px] w-full py-1">
-                  {/* Left Section - Title */}
-                  <div className="w-2/5 bg-accent flex items-center justify-center p-8">
-                    <h3 className="text-white text-4xl font-bold text-center leading-tight">
-                      {service.title}
-                    </h3>
-                  </div>
-                  
-                  {/* Right Section - Description & Points */}
-                  <div className="w-3/5 bg-black text-white p-10 flex flex-col justify-center">
-                    <p className="text-lg mb-8 leading-relaxed">
-                      {service.description}
-                    </p>
-                    <ul className="space-y-1">
-                      {service.points.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <span className="text-white text-xl mt-1">•</span>
-                          <span className="text-base leading-relaxed">{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </ScrollStackItem>
+              <ServiceCard key={index} {...service} />
             ))}
-          </ScrollStack>
+          </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className=" bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader title="Our Process" description="A systematic approach to delivering exceptional results" />
 
