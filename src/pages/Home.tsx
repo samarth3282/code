@@ -192,6 +192,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      {/* <ServicesStack/> */}
     </main>
   )
 }
