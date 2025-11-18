@@ -9,6 +9,14 @@ import { Menu, X } from "lucide-react"
 // gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
@@ -27,8 +35,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full top-0 z-50 transition-all duration-300 backdrop-blur-md ${
-        isScrolled ? "navbar-scrolled bg-background/80" : "bg-transparent"
+      className={`fixed w-full top-0 z-50 transition-all duration-500  ${
+        isScrolled ? "backdrop-blur-md bg-transparent":""
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

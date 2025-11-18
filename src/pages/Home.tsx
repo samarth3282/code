@@ -116,7 +116,7 @@ export default function Home() {
 
       {/* Services Preview Section */}
       <section className="py-24 bg-white">
-        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Our Services"
             description="Comprehensive architectural and urban planning solutions tailored to your vision"
@@ -134,8 +134,8 @@ export default function Home() {
               <Button content={"View All Services"}/>
             </Link>
           </div>
-        </div> */}
-        <ServicesStack/>
+        </div>
+        {/* <ServicesStack/> */}
       </section>
 
       {/* Featured Projects Section */}
