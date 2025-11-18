@@ -9,13 +9,10 @@ import { Menu, X } from "lucide-react"
 // gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  useEffect(() => { const handleScroll = () => { setIsScrolled(window.scrollY > 0) } 
+  window.addEventListener("scroll", handleScroll)
+  return () => window.removeEventListener("scroll", handleScroll) }, [])
+
 
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)

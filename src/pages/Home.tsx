@@ -6,6 +6,9 @@ import { Building2, Map, FileCheck, Lightbulb } from "lucide-react"
 import { Link } from "react-router-dom"
 import Button from "../components/Button"
 import ServicesStack from "../components/ServicesStack"
+import { BentoCard, BentoGrid } from "../components/BentoGrid"
+
+
 
 export default function Home() {
   const services = [
@@ -155,6 +158,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        
       </section>
 
       {/* Testimonial Section */}

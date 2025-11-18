@@ -14,6 +14,7 @@ import ScrollToTop from "./components/ScrollToTop"
 import { BentoGrid } from "./components/BentoGrid"
 import { BubbleBackground } from "./components/bubble"
 import ServicesStack from "./components/ServicesStack"
+import PageTransition from "./components/PageTransition"
 
 export default function App() {
   // const lenis = useLenis((lenis) => {
@@ -25,14 +26,16 @@ export default function App() {
 <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/:id" element={<ProjectDetail />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <PageTransition>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </PageTransition>
       <Footer />
       {/* <Card/> */}
       {/* <AsymmetricGrid/> */}
