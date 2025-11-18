@@ -5,6 +5,7 @@ import ProjectCard from "../components/ProjectCard"
 import { Building2, Map, FileCheck, Lightbulb } from "lucide-react"
 import { Link } from "react-router-dom"
 import Button from "../components/Button"
+import ServicesStack from "../components/ServicesStack"
 
 export default function Home() {
   const services = [
@@ -115,7 +116,7 @@ export default function Home() {
 
       {/* Services Preview Section */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Our Services"
             description="Comprehensive architectural and urban planning solutions tailored to your vision"
@@ -133,7 +134,8 @@ export default function Home() {
               <Button content={"View All Services"}/>
             </Link>
           </div>
-        </div>
+        </div> */}
+        <ServicesStack/>
       </section>
 
       {/* Featured Projects Section */}

@@ -49,7 +49,7 @@ export default function Contact() {
 
               <div className="space-y-8">
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="shrink-0 mt-1">
                     <Mail className="text-accent" size={24} />
                   </div>
                   <div>

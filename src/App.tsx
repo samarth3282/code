@@ -12,12 +12,14 @@ import Button from "./components/Button"
 import Card from "./components/FlipCard"
 import ScrollToTop from "./components/ScrollToTop"
 import { BentoGrid } from "./components/BentoGrid"
+import { BubbleBackground } from "./components/bubble"
+import ServicesStack from "./components/ServicesStack"
 
 export default function App() {
-  const lenis = useLenis((lenis) => {
-    // called every scroll
-    console.log(lenis)
-  })
+  // const lenis = useLenis((lenis) => {
+  //   // called every scroll
+  //   // console.log(lenis)
+  // })
   return (
     <ReactLenis root>
 <div className="min-h-screen bg-background text-foreground">
@@ -34,7 +36,11 @@ export default function App() {
       <Footer />
       {/* <Card/> */}
       {/* <AsymmetricGrid/> */}
-      <BentoGrid/>
+      {/* <BentoGrid/> */}
+      {/* <BubbleBackground
+      interactive={true}
+      className="absolute inset-0 flex items-center justify-center rounded-xl"/> */}
+      {/* <ServicesStack/> */}
     </div>
     </ReactLenis>
     
