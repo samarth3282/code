@@ -26,45 +26,45 @@ export interface BentoProps {
 
 const DEFAULT_PARTICLE_COUNT = 12;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
-const DEFAULT_GLOW_COLOR = '132, 0, 255';
+const DEFAULT_GLOW_COLOR = '139, 115, 85';
 const MOBILE_BREAKPOINT = 768;
 
 const cardData: BentoCardProps[] = [
   {
-    color: '#060010',
-    title: 'Analytics',
-    description: 'Track user behavior',
-    label: 'Insights'
+    color: '#2d2d2b',
+    title: 'Urban & Town Planning',
+    description: 'Comprehensive urban planning solutions for sustainable community development',
+    label: 'Planning'
   },
   {
-    color: '#060010',
-    title: 'Dashboard',
-    description: 'Centralized data view',
-    label: 'Overview'
+    color: '#8b7355',
+    title: 'Architectural Design',
+    description: 'Innovative architectural design from concept to completion',
+    label: 'Design'
   },
   {
-    color: '#060010',
-    title: 'Collaboration',
-    description: 'Work together seamlessly',
-    label: 'Teamwork'
+    color: '#1a1a18',
+    title: 'Plan Approval & Permissions',
+    description: 'Navigate complex regulatory processes with expertise',
+    label: 'Approvals'
   },
   {
-    color: '#060010',
-    title: 'Automation',
-    description: 'Streamline workflows',
-    label: 'Efficiency'
+    color: '#1a1a18',
+    title: 'GIS & Mapping Services',
+    description: 'Advanced geospatial analysis and data visualization',
+    label: 'GIS'
   },
   {
-    color: '#060010',
-    title: 'Integration',
-    description: 'Connect favorite tools',
-    label: 'Connectivity'
+    color: '#8b7355',
+    title: 'Project Consultancy',
+    description: 'Expert guidance throughout your project lifecycle',
+    label: 'Consultancy'
   },
   {
-    color: '#060010',
-    title: 'Security',
-    description: 'Enterprise-grade protection',
-    label: 'Protection'
+    color: '#2d2d2b',
+    title: 'Adaptive Reuse Design',
+    description: 'Transform existing structures into vibrant new spaces',
+    label: 'Adaptive Reuse'
   }
 ];
 
@@ -125,7 +125,7 @@ const ParticleCard: React.FC<{
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const particlesRef = useRef<HTMLDivElement[]>([]);
-  const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
+  const timeoutsRef = useRef<number[]>([]);
   const isHoveredRef = useRef(false);
   const memoizedParticles = useRef<HTMLDivElement[]>([]);
   const particlesInitialized = useRef(false);
@@ -350,7 +350,7 @@ const ParticleCard: React.FC<{
 };
 
 const GlobalSpotlight: React.FC<{
-  gridRef: React.RefObject<HTMLDivElement | null>;
+  gridRef: React.RefObject<HTMLDivElement>;
   disableAnimations?: boolean;
   enabled?: boolean;
   spotlightRadius?: number;
@@ -489,10 +489,10 @@ const GlobalSpotlight: React.FC<{
 
 const BentoCardGrid: React.FC<{
   children: React.ReactNode;
-  gridRef?: React.RefObject<HTMLDivElement | null>;
+  gridRef?: React.RefObject<HTMLDivElement>;
 }> = ({ children, gridRef }) => (
   <div
-    className="bento-section grid gap-2 p-3 max-w-[54rem] select-none relative"
+    className="bento-section grid gap-2 p-3 w-full select-none relative"
     style={{ fontSize: 'clamp(1rem, 0.9rem + 0.5vw, 1.5rem)' }}
     ref={gridRef}
   >
@@ -543,7 +543,7 @@ const MagicBento: React.FC<BentoProps> = ({
             --glow-radius: 200px;
             --glow-color: ${glowColor};
             --border-color: #392e4e;
-            --background-dark: #060010;
+            --background-dark: #060010; 
             --white: hsl(0, 0%, 100%);
             --purple-primary: rgba(132, 0, 255, 1);
             --purple-glow: rgba(132, 0, 255, 0.2);
@@ -552,7 +552,7 @@ const MagicBento: React.FC<BentoProps> = ({
           
           .card-responsive {
             grid-template-columns: 1fr;
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
             padding: 0.5rem;
           }
@@ -680,7 +680,7 @@ const MagicBento: React.FC<BentoProps> = ({
 
             const cardStyle = {
               backgroundColor: card.color || 'var(--background-dark)',
-              borderColor: 'var(--border-color)',
+              // borderColor: 'var(--border-color)',
               color: 'var(--white)',
               '--glow-x': '50%',
               '--glow-y': '50%',
@@ -705,11 +705,11 @@ const MagicBento: React.FC<BentoProps> = ({
                     <span className="card__label text-base">{card.label}</span>
                   </div>
                   <div className="card__content flex flex-col relative text-white">
-                    <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
+                    <h3 className={`card__title font-semibold text-2xl m-0 mb-2 ${textAutoHide ? 'text-clamp-1' : ''}`}>
                       {card.title}
                     </h3>
                     <p
-                      className={`card__description text-xs leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}
+                      className={`card__description text-sm leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}
                     >
                       {card.description}
                     </p>
@@ -837,10 +837,10 @@ const MagicBento: React.FC<BentoProps> = ({
                   <span className="card__label text-base">{card.label}</span>
                 </div>
                 <div className="card__content flex flex-col relative text-white">
-                  <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
+                  <h3 className={`card__title font-semibold text-2xl m-0 mb-2 ${textAutoHide ? 'text-clamp-1' : ''}`}>
                     {card.title}
                   </h3>
-                  <p className={`card__description text-xs leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}>
+                  <p className={`card__description text-sm leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}>
                     {card.description}
                   </p>
                 </div>

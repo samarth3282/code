@@ -15,6 +15,7 @@ import { BentoGrid } from "./components/BentoGrid"
 import { BubbleBackground } from "./components/bubble"
 // import ServicesStack from "./components/ServicesStack"
 import PageTransition from "./components/PageTransition"
+import MagicBento from "./components/MagicBento"
 
 export default function App() {
   // const lenis = useLenis((lenis) => {
@@ -45,6 +46,7 @@ export default function App() {
       className="absolute inset-0 flex items-center justify-center rounded-xl"/> */}
       {/* <ServicesStack/> */}
     </div>
+    {/* <MagicBento/> */}
     </ReactLenis>
     
   )

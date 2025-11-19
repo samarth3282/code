@@ -1,79 +1,10 @@
 import Button from "../components/Button"
 import SectionHeader from "../components/SectionHeader"
-import ServiceCard from "../components/ServiceCard"
-import { Building2, Map, FileCheck, Lightbulb, ArrowRight } from "lucide-react"
+import MagicBento from "../components/MagicBento"
+import { ArrowRight } from "lucide-react"
 import { Link } from "react-router-dom"
 
 export default function Services() {
-  const services = [
-    {
-      icon: Building2,
-      title: "Urban & Town Planning",
-      description: "Comprehensive urban planning solutions for sustainable community development",
-      points: [
-        "Strategic master planning and long-term visioning",
-        "Zoning, land use analysis, and policy recommendations",
-        "Community engagement and stakeholder consultation",
-        "Sustainability and resilience planning",
-      ],
-    },
-    {
-      icon: Building2,
-      title: "Architectural Design",
-      description: "Innovative architectural design from concept to completion",
-      points: [
-        "Conceptual design and feasibility studies",
-        "Detailed technical drawings and specifications",
-        "3D visualization and rendering",
-        "Construction administration and site oversight",
-      ],
-    },
-    {
-      icon: FileCheck,
-      title: "Plan Approval & Permissions",
-      description: "Navigate complex regulatory processes with expertise",
-      points: [
-        "Municipal and governmental approvals",
-        "Environmental impact assessment and clearance",
-        "Heritage conservation compliance",
-        "Comprehensive documentation and liaison",
-      ],
-    },
-    {
-      icon: Map,
-      title: "GIS & Mapping Services",
-      description: "Advanced geospatial analysis and data visualization",
-      points: [
-        "Geospatial data collection and analysis",
-        "Land surveys and digital mapping",
-        "Spatial visualization and reporting",
-        "Custom GIS database development",
-      ],
-    },
-    {
-      icon: Lightbulb,
-      title: "Project Consultancy",
-      description: "Expert guidance throughout your project lifecycle",
-      points: [
-        "Feasibility studies and market analysis",
-        "Project management and coordination",
-        "Cost optimization and budgeting",
-        "Risk assessment and mitigation strategies",
-      ],
-    },
-    {
-      icon: Building2,
-      title: "Adaptive Reuse Design",
-      description: "Transform existing structures into vibrant new spaces",
-      points: [
-        "Heritage building assessment",
-        "Functional repurposing strategies",
-        "Modern integration with historic elements",
-        "Compliance with conservation standards",
-      ],
-    },
-  ]
-
   return (
     <main className="pt-20">
       {/* Hero Section */}
@@ -91,11 +22,19 @@ export default function Services() {
       {/* Services Grid */}
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
-          </div>
+          <MagicBento
+            textAutoHide={false}
+            enableStars={true}
+            enableSpotlight={true}
+            enableBorderGlow={true}
+            disableAnimations={false}
+            spotlightRadius={1000}
+            particleCount={12}
+            enableTilt={false}
+            glowColor="139, 115, 85"
+            clickEffect={true}
+            enableMagnetism={true}
+          />
         </div>
       </section>
 
