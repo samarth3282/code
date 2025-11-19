@@ -5,7 +5,7 @@ import ProjectCard from "../components/ProjectCard"
 import { Building2, Map, FileCheck, Lightbulb } from "lucide-react"
 import { Link } from "react-router-dom"
 import Button from "../components/Button"
-import ServicesStack from "../components/ServicesStack"
+// import ServicesStack from "../components/ServicesStack"
 import { BentoCard, BentoGrid } from "../components/BentoGrid"
 
 

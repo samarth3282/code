@@ -95,4 +95,26 @@ export const servicesData = [
             },
         ],
     },
+    {
+        title: "Adaptive Reuse Design",
+        description: "Transform existing structures into vibrant new spaces",
+        items: [
+            {
+
+                title: "Heritage building assessment",
+            },
+            {
+                title: "Functional repurposing strategies",
+
+            }, {
+                title: "Modern integration with historic elements",
+
+            }, {
+                title: "Compliance with conservation standards",
+
+            }
+        ],
+    }
 ];
+
+

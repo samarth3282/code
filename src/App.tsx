@@ -13,7 +13,7 @@ import Card from "./components/FlipCard"
 import ScrollToTop from "./components/ScrollToTop"
 import { BentoGrid } from "./components/BentoGrid"
 import { BubbleBackground } from "./components/bubble"
-import ServicesStack from "./components/ServicesStack"
+// import ServicesStack from "./components/ServicesStack"
 import PageTransition from "./components/PageTransition"
 
 export default function App() {
