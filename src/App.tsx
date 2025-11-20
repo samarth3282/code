@@ -23,7 +23,16 @@ export default function App() {
   //   // console.log(lenis)
   // })
   return (
-    <ReactLenis root>
+    <ReactLenis 
+      root
+      // options={{
+      //   duration: 0.8,
+      //   easing: (t) => 1 - Math.pow(1 - t, 3),
+      //   lerp: 1,
+      //   smoothWheel: true,
+      //   wheelMultiplier: 1,
+      // }}
+    >
 <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <ScrollToTop />

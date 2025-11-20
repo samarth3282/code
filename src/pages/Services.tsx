@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 export default function Services() {
   return (
-    <main className="pt-20">
+    <main>
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center bg-primary text-white px-4 py-20">
         <div className="max-w-4xl text-center">

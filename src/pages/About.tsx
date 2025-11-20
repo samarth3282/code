@@ -39,7 +39,7 @@ export default function About() {
   ]
 
   return (
-    <main className="pt-20">
+    <main >
       {/* Hero */}
       <section className="min-h-screen flex items-center justify-center bg-background px-4 py-20">
         <div className="max-w-4xl">

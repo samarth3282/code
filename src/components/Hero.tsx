@@ -20,6 +20,7 @@ export default function Hero({ title, subtitle, description, image, buttons }: H
             backgroundImage: `url(${image})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
@@ -28,7 +29,7 @@ export default function Hero({ title, subtitle, description, image, buttons }: H
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-        {subtitle && <p className="text-accent text-sm font-semibold mb-4 tracking-widest uppercase">{subtitle}</p>}
+        {subtitle && <p className="text-white text-sm font-semibold mb-4 tracking-widest uppercase">{subtitle}</p>}
 
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">{title}</h1>
 

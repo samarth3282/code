@@ -5,8 +5,10 @@ import ProjectCard from "../components/ProjectCard"
 import { Building2, Map, FileCheck, Lightbulb } from "lucide-react"
 import { Link } from "react-router-dom"
 import Button from "../components/Button"
-// import ServicesStack from "../components/ServicesStack"
+import MagicBento, { BentoCardProps } from "../components/MagicBento"
 import { BentoCard, BentoGrid } from "../components/BentoGrid"
+import { ArchiveIcon, HomeIcon, GlobeIcon, BookmarkIcon } from "@radix-ui/react-icons"
+// import ServicesStack from "../components/ServicesStack"
 
 
 
@@ -52,31 +54,83 @@ export default function Home() {
   const projects = [
     {
       id: "1",
-      title: "Downtown Revitalization",
+      name: "Downtown Revitalization Master Plan",
       location: "Metropolitan Area",
       category: "Urban Planning",
-      image: "/modern-downtown-urban-development.jpg",
+      className: "md:col-span-1",
+      background: (
+        <div className="absolute inset-0 bg-linear-to-br from-blue-500/20 to-purple-500/20">
+          <img 
+            src="/modern-downtown-urban-development-city.jpg" 
+            alt="Downtown Revitalization" 
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+      ),
+      Icon: GlobeIcon,
+      description: "Comprehensive urban revitalization strategy for downtown core",
+      href: "/projects/1",
+      cta: "Learn more",
     },
     {
       id: "2",
-      title: "Sustainable Housing Complex",
+      name: "Sustainable Housing Complex",
       location: "Eco District",
       category: "Architecture",
-      image: "/sustainable-green-buildings-architecture.jpg",
+      className: "md:col-span-2",
+      background: (
+        <div className="absolute inset-0 bg-linear-to-br from-green-500/20 to-teal-500/20">
+          <img 
+            src="/sustainable-green-buildings-eco-friendly.jpg" 
+            alt="Sustainable Housing" 
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+      ),
+      Icon: HomeIcon,
+      description: "Mixed-use residential development with green building certifications",
+      href: "/projects/2",
+      cta: "Learn more",
     },
     {
       id: "3",
-      title: "Cultural Center",
+      name: "Cultural Center & Public Plaza",
       location: "Arts Quarter",
       category: "Architecture",
-      image: "/modern-cultural-center-building-design.jpg",
+      className: "md:col-span-2",
+      background: (
+        <div className="absolute inset-0 bg-linear-to-br from-pink-500/20 to-orange-500/20">
+          <img 
+            src="/modern-cultural-center-building-glass-architecture.jpg" 
+            alt="Cultural Center" 
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+      ),
+      Icon: ArchiveIcon,
+      description: "Contemporary cultural hub with flexible public gathering space",
+      href: "/projects/3",
+      cta: "Learn more",
     },
     {
       id: "4",
-      title: "Regional Park Development",
+      name: "Regional Park Development",
       location: "Suburban Area",
       category: "Urban Planning",
-      image: "/landscape-park-design-outdoor-spaces.jpg",
+      className: "md:col-span-1",
+      background: (
+        <div className="absolute inset-0 bg-linear-to-br from-emerald-500/20 to-lime-500/20">
+          <img 
+            src="/landscape-park-design-outdoor-recreation.jpg" 
+            alt="Regional Park" 
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+      ),
+      Icon: BookmarkIcon,
+      description: "Multi-phase park development with trails and community facilities",
+      href: "/projects/4",
+      cta: "Learn more",
     },
   ]
 
@@ -87,7 +141,7 @@ export default function Home() {
         title="Design Rooted in Wisdom. Built for Tomorrow."
         subtitle="Wise Root Design Studio"
         description="Architectural Design • Urban Planning • GIS • Project Consultancy"
-        image="/modern-architecture-building-skyline.jpg"
+        image="/foreground.jpeg"
         buttons={[
           { label: "Explore Services", link: "/services", primary: true },
           { label: "View Projects", link: "/projects", primary: false },
@@ -125,12 +179,46 @@ export default function Home() {
             description="Comprehensive architectural and urban planning solutions tailored to your vision"
             centered={true}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
-          </div>
-          <div className="text-center">
+          <MagicBento
+            textAutoHide={false}
+            enableStars={true}
+            enableSpotlight={true}
+            enableBorderGlow={true}
+            disableAnimations={false}
+            spotlightRadius={1000}
+            particleCount={12}
+            enableTilt={false}
+            glowColor="139, 115, 85"
+            clickEffect={true}
+            enableMagnetism={true}
+            cards={[
+              {
+                color: '#2d2d2b',
+                title: 'Urban & Town Planning',
+                description: 'Comprehensive urban planning solutions for sustainable community development',
+                label: 'Planning'
+              },
+              {
+                color: '#8b7355',
+                title: 'Architectural Design',
+                description: 'Innovative architectural design from concept to completion',
+                label: 'Design'
+              },
+              {
+                color: '#1a1a18',
+                title: 'Plan Approval & Permissions',
+                description: 'Navigate complex regulatory processes with expertise',
+                label: 'Approvals'
+              },
+              {
+                color: '#8b7355',
+                title: 'GIS & Mapping Services',
+                description: 'Advanced geospatial analysis and data visualization',
+                label: 'GIS'
+              }
+            ]}
+          />
+          <div className="text-center mt-12">
             <Link
               to="/services"
             >
@@ -145,12 +233,12 @@ export default function Home() {
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader title="Featured Projects" description="Showcasing our diverse portfolio of realized visions" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <BentoGrid>
             {projects.map((project) => (
-              <ProjectCard key={project.id} {...project} />
+              <BentoCard key={project.id} {...project} />
             ))}
-          </div>
-          <div className="text-center">
+          </BentoGrid>
+          <div className="text-center mt-12">
             <Link
               to="/projects"
             >

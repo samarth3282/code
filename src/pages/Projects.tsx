@@ -135,9 +135,9 @@ export default function Projects() {
   const filtered = projects.filter((project) => activeFilter === "all" || project.category === activeFilter)
 
   return (
-    <main className="pt-20">
+    <main>
       {/* Hero Section */}
-      <section className="min-h-96 flex items-center justify-center bg-primary text-white px-4 py-20">
+      <section className="h-screen flex items-center justify-center bg-primary text-white px-4 py-20">
         <div className="max-w-4xl text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Projects</h1>
           <p className="text-xl text-gray-300">

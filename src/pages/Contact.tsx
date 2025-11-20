@@ -3,6 +3,7 @@
 import type React from "react"
 import { useState } from "react"
 import { Mail, Phone, MapPin } from "lucide-react"
+import Hyperspeed from "../components/Hyperspeed"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -28,15 +29,22 @@ export default function Contact() {
   }
 
   return (
-    <main className="pt-20">
+    <main className="">
       {/* Hero Section */}
-      <section className="min-h-80 flex items-center justify-center bg-primary text-white px-4 py-20">
-        <div className="max-w-4xl text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h1>
+      <section className="h-screen flex items-center justify-center relative text-white px-4 py-20 overflow-hidden bg-black">
+        <div className="absolute inset-0 z-0">
+          <Hyperspeed />
+        </div>
+        <div className="max-w-4xl text-center relative z-10">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch.</h1>
           <p className="text-xl text-gray-300">
-            We'd love to hear about your project. Reach out to discuss how we can help.
+            Supercharge your designs.
+          </p>
+          <p className="text-sm text-gray-400 mt-6 animate-pulse">
+            💡 Click and hold to accelerate your ideas even faster.
           </p>
         </div>
+        
       </section>
 
       {/* Contact Section */}
@@ -45,7 +53,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-8">Contact Information</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-8">Contact Information.</h2>
 
               <div className="space-y-8">
                 <div className="flex gap-4">
@@ -87,7 +95,7 @@ export default function Contact() {
                     <MapPin className="text-accent" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">Studio Location</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Studio Location.</h3>
                     <p className="text-gray-600">
                       123 Architecture Avenue
                       <br />
