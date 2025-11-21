@@ -1,6 +1,7 @@
 "use client"
 import { useParams, Link } from "react-router-dom"
 import { ArrowLeft, MapPin } from "lucide-react"
+import SEO from "../components/SEO"
 
 export default function ProjectDetail() {
   const { id } = useParams()
@@ -126,6 +127,14 @@ export default function ProjectDetail() {
 
   return (
     <main className="pt-20">
+      <SEO 
+        title={`${project.title} - Wise Root Design Studio`}
+        description={project.description}
+        keywords={`${project.category}, ${project.title}, architecture project, urban planning project, ${project.location}`}
+        url={`https://wiserootdesign.com/projects/${id}`}
+        image={project.images[0]}
+      />
+      
       {/* Back Button */}
       <section className="bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">

@@ -1,4 +1,5 @@
 import SectionHeader from "../components/SectionHeader"
+import SEO from "../components/SEO"
 
 export default function About() {
   const values = [
@@ -40,6 +41,13 @@ export default function About() {
 
   return (
     <main >
+      <SEO 
+        title="About Us - Wise Root Design Studio"
+        description="Learn about Wise Root Design Studio, our story, mission, values, and team of expert architects and urban planners dedicated to creating sustainable, innovative designs."
+        keywords="architecture firm, urban planning company, design studio, about us, our team, sustainable architecture, our story"
+        url="https://wiserootdesign.com/about"
+      />
+      
       {/* Hero */}
       <section className="min-h-screen flex items-center justify-center bg-background px-4 py-20">
         <div className="max-w-4xl">

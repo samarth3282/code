@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { BentoCard, BentoGrid } from "../components/BentoGrid"
 import { ArchiveIcon, RocketIcon, HomeIcon, GlobeIcon, LightningBoltIcon, BookmarkIcon } from "@radix-ui/react-icons"
+import SEO from "../components/SEO"
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all")
@@ -136,12 +137,21 @@ export default function Projects() {
 
   return (
     <main>
+      <SEO 
+        title="Our Projects - Wise Root Design Studio"
+        description="Explore our portfolio of completed architecture and urban planning projects including downtown revitalization, sustainable housing, cultural centers, and more."
+        keywords="architecture projects, urban planning portfolio, completed projects, architectural portfolio, master planning projects, sustainable design projects"
+        url="https://wiserootdesign.com/projects"
+      />
+      
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center bg-primary text-white px-4 py-20">
+      <section className="min-h-screen flex items-center justify-center bg-accent text-white px-4 py-20">
         <div className="max-w-4xl text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Projects</h1>
-          <p className="text-xl text-gray-300">
-            Explore our portfolio of completed projects showcasing our design excellence and expertise.
+          <p className="text-white text-sm font-semibold uppercase tracking-widest mb-4">Portfolio</p>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">Our Projects</h1>
+          <p className="text-xl text-gray-100 leading-relaxed">
+            Discover our diverse portfolio of architectural and urban planning projects that demonstrate our commitment to
+            innovative, sustainable design.
           </p>
         </div>
       </section>
@@ -150,17 +160,17 @@ export default function Projects() {
       <section className="py-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
+            {["all", "Architecture", "Urban Planning"].map((filter) => (
               <button
-                key={category}
-                onClick={() => setActiveFilter(category)}
-                className={`px-6 py-2 rounded transition-colors capitalize ${
-                  activeFilter === category
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-6 py-2 rounded-full font-medium transition-all ${
+                  activeFilter === filter
                     ? "bg-accent text-white"
-                    : "bg-white text-foreground border border-border hover:bg-gray-50"
+                    : "bg-white text-gray-600 hover:bg-gray-100"
                 }`}
               >
-                {category}
+                {filter.charAt(0).toUpperCase() + filter.slice(1)}
               </button>
             ))}
           </div>

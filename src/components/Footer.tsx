@@ -44,24 +44,24 @@ export default function Footer() {
             <h3 className="font-semibold mb-4 text-sm">Services</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <Link to="/services" className="text-gray-300 hover:text-white">
                   Urban Planning
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <Link to="/services" className="text-gray-300 hover:text-white">
                   Architecture
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <Link to="/services" className="text-gray-300 hover:text-white">
                   GIS & Mapping
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <Link to="/services" className="text-gray-300 hover:text-white">
                   Consultancy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -71,23 +71,25 @@ export default function Footer() {
             <h3 className="font-semibold mb-4 text-sm">Contact</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
-                <Mail size={16} className="mt-0.5 flex-shrink-0" />
+                <Mail size={16} className="mt-0.5 shrink-0" />
                 <a href="mailto:info@wiserootdesign.com" className="text-gray-300 hover:text-white">
-                  info@wiserootdesign.com
+                  wiseroot.design5@gmail.com
                 </a>
               </div>
               <div className="flex items-start gap-2">
-                <Phone size={16} className="mt-0.5 flex-shrink-0" />
+                <Phone size={16} className="mt-0.5 shrink-0" />
                 <a href="tel:+1234567890" className="text-gray-300 hover:text-white">
-                  +1 (234) 567-890
+                  +91 87803 64153
                 </a>
               </div>
               <div className="flex items-start gap-2">
-                <MapPin size={16} className="mt-0.5 flex-shrink-0" />
+                <MapPin size={16} className="mt-0.5 shrink-0" />
                 <span className="text-gray-300">
-                  123 Architecture Ave
+                  G10, Patel Nagar Society
                   <br />
-                  Design City, DC 10001
+                  Jahangir Pura, Surat, 395004
+                  <br />
+                  Gujarat, India
                 </span>
               </div>
             </div>
@@ -98,13 +100,10 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-8 flex justify-between items-center">
           <p className="text-sm text-gray-400">&copy; 2025 Wise Root Design Studio. All rights reserved.</p>
           <div className="flex gap-4">
-            <a href="#" className="text-gray-300 hover:text-white">
+            <a target="_blank" href="https://www.linkedin.com/in/harsh-patel-453026184/" className="text-gray-300 hover:text-white">
               <Linkedin size={18} />
             </a>
-            <a href="#" className="text-gray-300 hover:text-white">
-              <Twitter size={18} />
-            </a>
-            <a href="#" className="text-gray-300 hover:text-white">
+            <a target="_blank" href="https://www.instagram.com/wise_root_/" className="text-gray-300 hover:text-white">
               <Instagram size={18} />
             </a>
           </div>

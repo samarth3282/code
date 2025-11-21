@@ -8,6 +8,8 @@ import Button from "../components/Button"
 import MagicBento, { BentoCardProps } from "../components/MagicBento"
 import { BentoCard, BentoGrid } from "../components/BentoGrid"
 import { ArchiveIcon, HomeIcon, GlobeIcon, BookmarkIcon } from "@radix-ui/react-icons"
+import SEO from "../components/SEO"
+import StructuredData from "../components/StructuredData"
 // import ServicesStack from "../components/ServicesStack"
 
 
@@ -136,6 +138,15 @@ export default function Home() {
 
   return (
     <main>
+      <SEO 
+        title="Wise Root Design Studio - Architecture & Urban Planning"
+        description="Leading architecture and urban planning firm specializing in sustainable design, master planning, GIS services, and innovative architectural solutions."
+        keywords="architecture, urban planning, sustainable design, master planning, architectural design, town planning, GIS mapping, project consultancy, architectural services"
+        url="https://wiserootdesign.com"
+      />
+      <StructuredData type="organization" />
+      <StructuredData type="website" />
+      
       {/* Hero Section */}
       <Hero
         title="Design Rooted in Wisdom. Built for Tomorrow."

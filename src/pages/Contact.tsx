@@ -4,6 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { Mail, Phone, MapPin } from "lucide-react"
 import Hyperspeed from "../components/Hyperspeed"
+import SEO from "../components/SEO"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ export default function Contact() {
     phone: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{ type: "success" | "error"; message: string } | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -21,15 +24,57 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    alert("Thank you for your message. We will get back to you soon!")
-    setFormData({ name: "", email: "", phone: "", message: "" })
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    const formDataObj = new FormData(event.currentTarget)
+    formDataObj.append("access_key", "4bec022f-0486-47a8-81b2-5dc2d67a9733")
+
+    const object = Object.fromEntries(formDataObj)
+    const json = JSON.stringify(object)
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      }).then((res) => res.json())
+
+      if (res.success) {
+        console.log("Success", res)
+        setSubmitStatus({
+          type: "success",
+          message: "Thank you for your message! We will get back to you soon."
+        })
+        setFormData({ name: "", email: "", phone: "", message: "" })
+      } else {
+        throw new Error(res.message || "Failed to send message")
+      }
+    } catch (error) {
+      console.error("Error:", error)
+      setSubmitStatus({
+        type: "error",
+        message: "Failed to send message. Please try again or email us directly."
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
     <main className="">
+      <SEO 
+        title="Contact Us - Wise Root Design Studio"
+        description="Get in touch with Wise Root Design Studio for architectural design, urban planning, and consultancy services. Contact our team of experts today."
+        keywords="contact architect, architecture firm contact, urban planning consultation, project consultation, get in touch"
+        url="https://wise-root.vercel.app/contact"
+      />
+      
       {/* Hero Section */}
       <section className="h-screen flex items-center justify-center relative text-white px-4 py-20 overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
@@ -66,14 +111,7 @@ export default function Contact() {
                       href="mailto:info@wiserootdesign.com"
                       className="text-gray-600 hover:text-accent transition-colors"
                     >
-                      info@wiserootdesign.com
-                    </a>
-                    <br />
-                    <a
-                      href="mailto:projects@wiserootdesign.com"
-                      className="text-gray-600 hover:text-accent transition-colors"
-                    >
-                      projects@wiserootdesign.com
+                      wiseroot.design5@gmail.com
                     </a>
                   </div>
                 </div>
@@ -85,7 +123,7 @@ export default function Contact() {
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">Phone</h3>
                     <a href="tel:+1234567890" className="text-gray-600 hover:text-accent transition-colors">
-                      +1 (234) 567-890
+                      +91 87803 64153
                     </a>
                   </div>
                 </div>
@@ -97,11 +135,11 @@ export default function Contact() {
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">Studio Location.</h3>
                     <p className="text-gray-600">
-                      123 Architecture Avenue
+                      G10, Patel Nagar Society
                       <br />
-                      Design City, DC 10001
+                      Jahangir Pura, Surat, 395004
                       <br />
-                      United States
+                      Gujarat, India
                     </p>
                   </div>
                 </div>
@@ -109,24 +147,15 @@ export default function Contact() {
 
               {/* Map Placeholder */}
               <div className="mt-8 rounded-lg overflow-hidden h-80">
-                {/* <iframe
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1480949258907!2d-74.00601!3d40.71281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQzLjAiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1sen!2sus!4v1234567890"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Wise Root Design Studio Location"
-                ></iframe> */}
                 <iframe
                 width="100%"
                 height="100%"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.744180129635!2d72.81658683796476!3d21.241990627034074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04eb2f9534f55%3A0xce7bc265123d0155!2sNani%20Ved%2C%20Pramukh%20Darshan%20Society%2C%20Dabholi%2C%20Surat%2C%20Gujarat%20395004!5e0!3m2!1sen!2sin!4v1763147059465!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.969419006965!2d72.7848666!3d21.2458826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f01cf5cebb3%3A0x7a90dc7992a71cd6!2sPin%20Location!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Wise Root Design Studio Location"></iframe>
+                title="Wise Root Design Studio Location"
+                style={{ border: 0 }}></iframe>
               </div>
             </div>
 
@@ -200,10 +229,23 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-accent text-white py-3 rounded font-semibold hover:bg-accent/90 transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full bg-accent text-white py-3 rounded font-semibold hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
+
+                {submitStatus && (
+                  <div
+                    className={`mt-4 p-4 rounded ${
+                      submitStatus.type === "success"
+                        ? "bg-green-50 text-green-800 border border-green-200"
+                        : "bg-red-50 text-red-800 border border-red-200"
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </div>
+                )}
               </form>
             </div>
           </div>
@@ -218,15 +260,15 @@ export default function Contact() {
             {[
               {
                 title: "For Project Inquiries",
-                email: "projects@wiserootdesign.com",
+                email: "wiseroot.design5@gmail.com",
               },
               {
                 title: "For General Information",
-                email: "info@wiserootdesign.com",
+                email: "wiseroot.design5@gmail.com",
               },
               {
                 title: "For Career Opportunities",
-                email: "careers@wiserootdesign.com",
+                email: "wiseroot.design5@gmail.com",
               },
             ].map((item, index) => (
               <div key={index} className="text-center p-6 bg-background rounded-lg">

@@ -3,10 +3,18 @@ import SectionHeader from "../components/SectionHeader"
 import MagicBento from "../components/MagicBento"
 import { ArrowRight } from "lucide-react"
 import { Link } from "react-router-dom"
+import SEO from "../components/SEO"
 
 export default function Services() {
   return (
     <main>
+      <SEO 
+        title="Our Services - Wise Root Design Studio"
+        description="Comprehensive architectural and urban planning services including architectural design, urban planning, GIS mapping, plan approvals, and project consultancy."
+        keywords="architectural services, urban planning services, GIS mapping, plan approval, project consultancy, master planning, architectural design services"
+        url="https://wiserootdesign.com/services"
+      />
+      
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center bg-primary text-white px-4 py-20">
         <div className="max-w-4xl text-center">

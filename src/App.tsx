@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom"
+import { HelmetProvider } from 'react-helmet-async'
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
@@ -23,17 +24,18 @@ export default function App() {
   //   // console.log(lenis)
   // })
   return (
-    <ReactLenis 
-      root
-      // options={{
-      //   duration: 0.8,
-      //   easing: (t) => 1 - Math.pow(1 - t, 3),
-      //   lerp: 1,
-      //   smoothWheel: true,
-      //   wheelMultiplier: 1,
-      // }}
-    >
-<div className="min-h-screen bg-background text-foreground">
+    <HelmetProvider>
+      <ReactLenis 
+        root
+        // options={{
+        //   duration: 0.8,
+        //   easing: (t) => 1 - Math.pow(1 - t, 3),
+        //   lerp: 1,
+        //   smoothWheel: true,
+        //   wheelMultiplier: 1,
+        // }}
+      >
+  <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <ScrollToTop />
       <PageTransition>
@@ -56,7 +58,7 @@ export default function App() {
       {/* <ServicesStack/> */}
     </div>
     {/* <MagicBento/> */}
-    </ReactLenis>
-    
+      </ReactLenis>
+    </HelmetProvider>
   )
 }
