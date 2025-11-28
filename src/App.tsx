@@ -17,6 +17,7 @@ import { BubbleBackground } from "./components/bubble"
 // import ServicesStack from "./components/ServicesStack"
 import PageTransition from "./components/PageTransition"
 import MagicBento from "./components/MagicBento"
+import CinematicIntro from "./components/CinematicIntro"
 
 export default function App() {
   // const lenis = useLenis((lenis) => {
@@ -24,7 +25,12 @@ export default function App() {
   //   // console.log(lenis)
   // })
   return (
-    <HelmetProvider>
+    // <div className="relative">
+    //   <CinematicIntro revealTarget=".site-content" />
+
+    //   <div className="site-content">
+    //     {/* Your entire website content */}
+      <HelmetProvider>
       <ReactLenis 
         root
         // options={{
@@ -60,5 +66,8 @@ export default function App() {
     {/* <MagicBento/> */}
       </ReactLenis>
     </HelmetProvider>
+    //   </div>
+    // </div>
+    
   )
 }

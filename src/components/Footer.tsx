@@ -72,7 +72,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
                 <Mail size={16} className="mt-0.5 shrink-0" />
-                <a href="mailto:info@wiserootdesign.com" className="text-gray-300 hover:text-white">
+                <a href="mailto:info@wise-root.vercel.app" className="text-gray-300 hover:text-white">
                   wiseroot.design5@gmail.com
                 </a>
               </div>

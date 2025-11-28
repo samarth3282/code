@@ -74,7 +74,7 @@ root/
    - Favicon files (use favicon.io to generate)
 
 3. **Update Domain** (if different):
-   - Replace `https://wiserootdesign.com` everywhere with your actual domain
+   - Replace `https://wise-root.vercel.app` everywhere with your actual domain
 
 ### This Week:
 

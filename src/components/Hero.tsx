@@ -44,7 +44,7 @@ export default function Hero({ title, subtitle, description, image, buttons }: H
                 key={index}
                 to={button.link}
               >
-                <Button content={button.label} {...(!button.primary && { notHoverBackgroundColor: "white",textColor: "black",hoverTextColor: "white"})}
+                <Button content={button.label} {...(!button.primary && { backgroundColor: "white", textColor: "black", borderColor: "white", notHoverBackgroundColor: "black", hoverTextColor: "white"})}
 />
 
                 

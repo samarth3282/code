@@ -12,7 +12,7 @@ export default function Services() {
         title="Our Services - Wise Root Design Studio"
         description="Comprehensive architectural and urban planning services including architectural design, urban planning, GIS mapping, plan approvals, and project consultancy."
         keywords="architectural services, urban planning services, GIS mapping, plan approval, project consultancy, master planning, architectural design services"
-        url="https://wiserootdesign.com/services"
+        url="https://wise-root.vercel.app/services"
       />
       
       {/* Hero Section */}
@@ -32,14 +32,14 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MagicBento
             textAutoHide={false}
-            enableStars={true}
+            enableStars={false}
             enableSpotlight={true}
-            enableBorderGlow={true}
+            enableBorderGlow={false}
             disableAnimations={false}
             spotlightRadius={1000}
             particleCount={12}
             enableTilt={false}
-            glowColor="139, 115, 85"
+            glowColor="255, 255, 255"
             clickEffect={true}
             enableMagnetism={true}
           />
@@ -101,7 +101,7 @@ export default function Services() {
             
           >
             <div className="inline-flex items-center gap-2">
-<Button content={"Request Consultation"}  notHoverBackgroundColor="white" textColor="#8b7355" className="font-bold" />
+<Button content={"Request Consultation"} backgroundColor="white" textColor="#8b7355" borderColor="white" notHoverBackgroundColor="black" hoverTextColor="white" className="font-bold" />
             <ArrowRight size={18} />
             </div>
             

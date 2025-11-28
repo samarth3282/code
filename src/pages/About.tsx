@@ -45,7 +45,7 @@ export default function About() {
         title="About Us - Wise Root Design Studio"
         description="Learn about Wise Root Design Studio, our story, mission, values, and team of expert architects and urban planners dedicated to creating sustainable, innovative designs."
         keywords="architecture firm, urban planning company, design studio, about us, our team, sustainable architecture, our story"
-        url="https://wiserootdesign.com/about"
+        url="https://wise-root.vercel.app/about"
       />
       
       {/* Hero */}

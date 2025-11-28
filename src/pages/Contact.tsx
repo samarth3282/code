@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Mail, Phone, MapPin } from "lucide-react"
 import Hyperspeed from "../components/Hyperspeed"
 import SEO from "../components/SEO"
+import Button from "../components/Button"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -108,7 +109,7 @@ export default function Contact() {
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">Email</h3>
                     <a
-                      href="mailto:info@wiserootdesign.com"
+                      href="mailto:info@wise-root.vercel.app"
                       className="text-gray-600 hover:text-accent transition-colors"
                     >
                       wiseroot.design5@gmail.com
@@ -226,14 +227,14 @@ export default function Contact() {
                     placeholder="Tell us about your project..."
                   />
                 </div>
-
-                <button
+                <Button className="w-full" content={isSubmitting ? "Sending..." : "Send Message"}/>
+                {/* <button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-accent text-white py-3 rounded font-semibold hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
-                </button>
+                </button> */}
 
                 {submitStatus && (
                   <div

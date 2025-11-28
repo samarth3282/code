@@ -4,6 +4,7 @@ import { useState } from "react"
 import { BentoCard, BentoGrid } from "../components/BentoGrid"
 import { ArchiveIcon, RocketIcon, HomeIcon, GlobeIcon, LightningBoltIcon, BookmarkIcon } from "@radix-ui/react-icons"
 import SEO from "../components/SEO"
+import Button from "../components/Button"
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all")
@@ -27,7 +28,7 @@ export default function Projects() {
       Icon: GlobeIcon,
       description: "Comprehensive urban revitalization strategy for downtown core",
       href: "/projects/1",
-      cta: "Learn more",
+      // cta: "Learn more",
     },
     {
       id: "2",
@@ -47,7 +48,7 @@ export default function Projects() {
       Icon: HomeIcon,
       description: "Mixed-use residential development with green building certifications",
       href: "/projects/2",
-      cta: "Learn more",
+      // cta: "Learn more",
     },
     {
       id: "3",
@@ -67,7 +68,7 @@ export default function Projects() {
       Icon: ArchiveIcon,
       description: "Contemporary cultural hub with flexible public gathering space",
       href: "/projects/3",
-      cta: "Learn more",
+      // cta: "Learn more",
     },
     {
       id: "4",
@@ -87,7 +88,7 @@ export default function Projects() {
       Icon: BookmarkIcon,
       description: "Multi-phase park development with trails and community facilities",
       href: "/projects/4",
-      cta: "Learn more",
+      // cta: "Learn more",
     },
     {
       id: "5",
@@ -107,7 +108,7 @@ export default function Projects() {
       Icon: RocketIcon,
       description: "Cutting-edge office spaces designed for collaborative innovation",
       href: "/projects/5",
-      cta: "Learn more",
+      // cta: "Learn more",
     },
     {
       id: "6",
@@ -127,7 +128,7 @@ export default function Projects() {
       Icon: LightningBoltIcon,
       description: "Adaptive reuse strategy preserving heritage while enabling growth",
       href: "/projects/6",
-      cta: "Learn more",
+      // cta: "Learn more",
     },
   ]
 
@@ -141,7 +142,7 @@ export default function Projects() {
         title="Our Projects - Wise Root Design Studio"
         description="Explore our portfolio of completed architecture and urban planning projects including downtown revitalization, sustainable housing, cultural centers, and more."
         keywords="architecture projects, urban planning portfolio, completed projects, architectural portfolio, master planning projects, sustainable design projects"
-        url="https://wiserootdesign.com/projects"
+        url="https://wise-root.vercel.app/projects"
       />
       
       {/* Hero Section */}
@@ -161,17 +162,18 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {["all", "Architecture", "Urban Planning"].map((filter) => (
-              <button
+              <Button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-2 rounded-full font-medium transition-all ${
-                  activeFilter === filter
-                    ? "bg-accent text-white"
-                    : "bg-white text-gray-600 hover:bg-gray-100"
-                }`}
-              >
-                {filter.charAt(0).toUpperCase() + filter.slice(1)}
-              </button>
+                content={filter.charAt(0).toUpperCase() + filter.slice(1)}
+                backgroundColor={activeFilter === filter ? "#8b7355" : "#fff"}
+                textColor={activeFilter === filter ? "#fff" : "#4b5563"}
+                borderColor={activeFilter === filter ? "#8b7355" : "#e5e7eb"}
+                notHoverBackgroundColor={activeFilter === filter ? "#000" : "#8b7355"}
+                hoverTextColor="#fff"
+                padding="8px 24px"
+                className="rounded-full"
+              />
             ))}
           </div>
         </div>

@@ -2,6 +2,7 @@
 import { useParams, Link } from "react-router-dom"
 import { ArrowLeft, MapPin } from "lucide-react"
 import SEO from "../components/SEO"
+import Button from "../components/Button"
 
 export default function ProjectDetail() {
   const { id } = useParams()
@@ -32,8 +33,8 @@ export default function ProjectDetail() {
         "We developed a phased approach emphasizing adaptive reuse of historic buildings, creation of public gathering spaces, improved transit connectivity, and new mixed-income housing. The plan integrates sustainability and cultural programming.",
       images: [
         "/downtown-urban-revitalization-modern-city-center.jpg",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
+        "/modern-downtown-urban-development-city.jpg",
+        "/modern-downtown-urban-development.jpg",
       ],
     },
     "2": {
@@ -48,9 +49,9 @@ export default function ProjectDetail() {
       solution:
         "We implemented passive design strategies, renewable energy systems, and green building materials. The layout prioritizes walkability, community gardens, and shared green spaces. Extensive use of natural light reduces energy consumption.",
       images: [
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
+        "/sustainable-green-buildings-eco-friendly.jpg",
+        "/sustainable-green-buildings-architecture.jpg",
+        "/sustainable-2.png",
       ],
     },
     "3": {
@@ -65,9 +66,9 @@ export default function ProjectDetail() {
       solution:
         "The design features a modular interior layout allowing various configurations, while the plaza incorporates movable elements, multiple levels, and strategic landscaping to define spaces for different activities and audience sizes.",
       images: [
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
+        "/modern-cultural-center-building-glass-architecture.jpg",
+        "/modern-cultural-center-building-design.jpg",
+        "/cultural-3.png",
       ],
     },
     "4": {
@@ -82,9 +83,9 @@ export default function ProjectDetail() {
       solution:
         "We created distinct zones for active recreation, passive nature areas, and community gathering. Native plantings support local ecosystems, while trails provide connectivity throughout. Stormwater management is integrated into the landscape design.",
       images: [
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
+        "/landscape-park-design-outdoor-recreation.jpg",
+        "/landscape-park-design-outdoor-spaces.jpg",
+        "/park-3.png",
       ],
     },
     "5": {
@@ -99,9 +100,9 @@ export default function ProjectDetail() {
       solution:
         "The design emphasizes flexible open spaces, breakout areas, and outdoor connectivity. Each floor features modular workstations, casual meeting zones, and dedicated innovation spaces. Biophilic design elements throughout improve wellbeing and creativity.",
       images: [
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
+        "/modern-office-campus-tech-buildings.jpg",
+        "/tech-2.png",
+        "/tech-3.png",
       ],
     },
     "6": {
@@ -116,9 +117,9 @@ export default function ProjectDetail() {
       solution:
         "We established design guidelines respecting historic typologies while allowing contemporary interventions. Tax incentive strategies were identified, and adaptive reuse case studies demonstrated economic potential. Community engagement ensured cultural priorities were maintained.",
       images: [
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
+        "/historic-architecture-renovation-restoration.jpg",
+        "/heritage-2.png",
+        "/heritage-3.png",
       ],
     },
   }
@@ -131,7 +132,7 @@ export default function ProjectDetail() {
         title={`${project.title} - Wise Root Design Studio`}
         description={project.description}
         keywords={`${project.category}, ${project.title}, architecture project, urban planning project, ${project.location}`}
-        url={`https://wiserootdesign.com/projects/${id}`}
+        url={`https://wise-root.vercel.app/projects/${id}`}
         image={project.images[0]}
       />
       
@@ -210,9 +211,9 @@ export default function ProjectDetail() {
           </p>
           <Link
             to="/contact"
-            className="inline-block px-8 py-3 bg-accent text-white rounded hover:bg-accent/90 transition-colors"
+            
           >
-            Schedule Consultation
+            <Button content={"Schedule Consultation"}/>
           </Link>
         </div>
       </section>

@@ -15,7 +15,7 @@ export default function SEO({
   description = 'Wise Root Design Studio - Leading architecture and urban planning firm specializing in sustainable design, master planning, and innovative architectural solutions.',
   keywords = 'architecture, urban planning, sustainable design, master planning, architectural services, town planning, GIS mapping, project consultancy',
   image = '/og-image.jpg',
-  url = 'https://wiserootdesign.com',
+  url = 'https://wise-root.vercel.app',
   type = 'website',
   author = 'Wise Root Design Studio'
 }: SEOProps) {

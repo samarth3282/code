@@ -107,7 +107,7 @@ Current URL structure is SEO-friendly:
   "addressCountry": "US"                  // ← Update
 },
 "telephone": "+1-XXX-XXX-XXXX",          // ← Update
-"email": "info@wiserootdesign.com",
+"email": "info@wise-root.vercel.app",
 "latitude": "Your Latitude",              // ← Update
 "longitude": "Your Longitude"             // ← Update
 ```
@@ -122,9 +122,9 @@ Create these images in `/public`:
 
 ### 7. **Google Search Console Setup**
 1. Go to https://search.google.com/search-console
-2. Add property: `https://wiserootdesign.com`
+2. Add property: `https://wise-root.vercel.app`
 3. Verify ownership (HTML file or DNS)
-4. Submit sitemap: `https://wiserootdesign.com/sitemap.xml`
+4. Submit sitemap: `https://wise-root.vercel.app/sitemap.xml`
 5. Monitor indexing and performance
 
 ### 8. **Analytics Integration**
@@ -247,7 +247,7 @@ Add these pages for better SEO:
 
 ## 📝 Important Notes
 
-1. **Update Your Domain**: Replace `https://wiserootdesign.com` with your actual domain in:
+1. **Update Your Domain**: Replace `https://wise-root.vercel.app` with your actual domain in:
    - All SEO component props
    - sitemap.xml
    - robots.txt
@@ -255,7 +255,7 @@ Add these pages for better SEO:
 
 2. **Environment Variables**: Consider creating `.env` file:
    ```
-   VITE_SITE_URL=https://wiserootdesign.com
+   VITE_SITE_URL=https://wise-root.vercel.app
    VITE_SITE_NAME=Wise Root Design Studio
    ```
 

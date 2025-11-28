@@ -98,23 +98,44 @@ body {
 	overflow: hidden;
 }
 
+/* Ripple background element */
+.button--hyperion .ripple-bg {
+	position: absolute;
+	left: var(--ripple-left, 50%);
+	top: var(--ripple-top, 50%);
+	width: var(--ripple-size, 0);
+	height: var(--ripple-size, 0);
+	background: var(--hover-bg, #8b7355);
+	border-radius: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+	z-index: 0;
+}
+
+.button--hyperion.is-hovering .ripple-bg {
+	transform: translate(-50%, -50%) scale(1);
+}
+
 .button--hyperion span {
 	display: block;
 	position: relative;
 }
 
-.button--hyperion > span {
+.button--hyperion > span:last-child {
 	overflow: hidden;
+	position: relative;
+	z-index: 1;
 }
 
-.button--hyperion > span > span {
+.button--hyperion > span:last-child > span {
 	overflow: hidden;
 	transition: color 0.3s cubic-bezier(0.7, 0, 0.2, 1);
 	/* mix-blend-mode: difference; */
   /* color:#fff; */
 }
 
-.button--hyperion:hover > span > span {
+.button--hyperion.is-hovering > span:last-child > span {
 	animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
 	color: var(--hover-text, #fff);
 }
@@ -131,18 +152,6 @@ body {
 	to {
 		transform: translate3d(0,0,0);
 	}
-}
-
-.button--hyperion::before {
-	content: '';
-	background: var(--hover-bg, #8b7355);
-	transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
-	transform-origin: 100% 50%;
-}
-
-.button--hyperion:hover::before {
-	transform: scale3d(0,1,1);
-	transform-origin: 0% 50%;
 }
 
 .button {

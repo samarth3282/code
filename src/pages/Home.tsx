@@ -1,7 +1,5 @@
 import Hero from "../components/Hero"
 import SectionHeader from "../components/SectionHeader"
-import ServiceCard from "../components/ServiceCard"
-import ProjectCard from "../components/ProjectCard"
 import { Building2, Map, FileCheck, Lightbulb } from "lucide-react"
 import { Link } from "react-router-dom"
 import Button from "../components/Button"
@@ -72,7 +70,7 @@ export default function Home() {
       Icon: GlobeIcon,
       description: "Comprehensive urban revitalization strategy for downtown core",
       href: "/projects/1",
-      cta: "Learn more",
+      // cta: "Learn more",
     },
     {
       id: "2",
@@ -92,7 +90,7 @@ export default function Home() {
       Icon: HomeIcon,
       description: "Mixed-use residential development with green building certifications",
       href: "/projects/2",
-      cta: "Learn more",
+      // cta: "Learn more",
     },
     {
       id: "3",
@@ -112,7 +110,7 @@ export default function Home() {
       Icon: ArchiveIcon,
       description: "Contemporary cultural hub with flexible public gathering space",
       href: "/projects/3",
-      cta: "Learn more",
+      // cta: "Learn more",
     },
     {
       id: "4",
@@ -132,7 +130,7 @@ export default function Home() {
       Icon: BookmarkIcon,
       description: "Multi-phase park development with trails and community facilities",
       href: "/projects/4",
-      cta: "Learn more",
+      // cta: "Learn more",
     },
   ]
 
@@ -142,7 +140,7 @@ export default function Home() {
         title="Wise Root Design Studio - Architecture & Urban Planning"
         description="Leading architecture and urban planning firm specializing in sustainable design, master planning, GIS services, and innovative architectural solutions."
         keywords="architecture, urban planning, sustainable design, master planning, architectural design, town planning, GIS mapping, project consultancy, architectural services"
-        url="https://wiserootdesign.com"
+        url="https://wise-root.vercel.app"
       />
       <StructuredData type="organization" />
       <StructuredData type="website" />
@@ -192,14 +190,14 @@ export default function Home() {
           />
           <MagicBento
             textAutoHide={false}
-            enableStars={true}
+            enableStars={false}
             enableSpotlight={true}
-            enableBorderGlow={true}
+            enableBorderGlow={false}
             disableAnimations={false}
             spotlightRadius={1000}
             particleCount={12}
             enableTilt={false}
-            glowColor="139, 115, 85"
+            glowColor="255, 255, 255"
             clickEffect={true}
             enableMagnetism={true}
             cards={[

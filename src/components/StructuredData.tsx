@@ -12,13 +12,13 @@ export default function StructuredData({ type = 'organization', data }: Structur
         return {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "@id": "https://wiserootdesign.com",
+          "@id": "https://wise-root.vercel.app",
           "name": "Wise Root Design Studio",
           "alternateName": "Wise Root",
           "description": "Leading architecture and urban planning firm specializing in sustainable design, master planning, and innovative architectural solutions.",
-          "url": "https://wiserootdesign.com",
-          "logo": "https://wiserootdesign.com/wise_root_logo.png",
-          "image": "https://wiserootdesign.com/og-image.jpg",
+          "url": "https://wise-root.vercel.app",
+          "logo": "https://wise-root.vercel.app/wise_root_logo.png",
+          "image": "https://wise-root.vercel.app/og-image.jpg",
           "priceRange": "$$",
           "address": {
             "@type": "PostalAddress",
@@ -88,19 +88,19 @@ export default function StructuredData({ type = 'organization', data }: Structur
           "@context": "https://schema.org",
           "@type": "WebSite",
           "name": "Wise Root Design Studio",
-          "url": "https://wiserootdesign.com",
+          "url": "https://wise-root.vercel.app",
           "description": "Leading architecture and urban planning firm",
           "publisher": {
             "@type": "Organization",
             "name": "Wise Root Design Studio",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://wiserootdesign.com/logo.png"
+              "url": "https://wise-root.vercel.app/logo.png"
             }
           },
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://wiserootdesign.com/search?q={search_term_string}",
+            "target": "https://wise-root.vercel.app/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
           }
         };
