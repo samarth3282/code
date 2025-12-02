@@ -46,8 +46,8 @@ export default function StructuredData({ type = 'organization', data }: Structur
             "@type": "GeoCircle",
             "geoMidpoint": {
               "@type": "GeoCoordinates",
-              "latitude": "Your Latitude",
-              "longitude": "Your Longitude"
+              "latitude": "21.245883",
+              "longitude": "72.784867"
             },
             "geoRadius": "50000"
           },
